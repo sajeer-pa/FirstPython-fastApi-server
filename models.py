@@ -27,21 +27,21 @@
 
 
 
-from sqlalchemy import Column, Integer, String, DateTime, func
-from sqlalchemy.ext.declarative import declarative_base
+# from sqlalchemy import Column, Integer, String, DateTime, func
+# from sqlalchemy.ext.declarative import declarative_base
 
-Base = declarative_base()
+# Base = declarative_base()
 
-class Author(Base):
-    __tablename__ = 'author'
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    age = Column(Integer)
-    time_created = Column(DateTime(timezone=True), server_default=func.now())
-    time_updated = Column(DateTime(timezone=True), onupdate=func.now())
+# class Author(Base):
+#     __tablename__ = 'author'
+#     id = Column(Integer, primary_key=True, index=True)
+#     name = Column(String)
+#     age = Column(Integer)
+#     time_created = Column(DateTime(timezone=True), server_default=func.now())
+#     time_updated = Column(DateTime(timezone=True), onupdate=func.now())
 
-class Publication(Base):
-    __tablename__ = 'Publication'
-    id = Column(Integer, primary_key=True)
-    title = Column(String)
-    author_id = Column(Integer)
+# class Publication(Base):
+#     __tablename__ = 'Publication'
+#     id = Column(Integer, primary_key=True)
+#     title = Column(String)
+#     author_id = Column(Integer)

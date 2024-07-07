@@ -8,7 +8,6 @@ fastapi = "*"
 uvicorn = "*"
 fastapi-sqlalchemy = "*"
 pydantic = "*"
-alembic = "*"
 psycopg2 = "*"
 python-dotenv = "*"
 

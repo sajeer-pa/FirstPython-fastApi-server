@@ -1,6 +1,5 @@
 fastapi
 uvicorn
-fastapi_sqlalchemy
 python-dotenv
-SQLAlchemy
 psycopg2-binary
+motor

@@ -1,9 +1,17 @@
 import os
-from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker
+from motor.motor_asyncio import AsyncIOMotorClient
 
-engine = create_engine(os.environ['DATABASE_URL'], echo=True)
+class MongoDB:
+    def __init__(self):
+        self.client = None
+        self.db = None
 
-Base = declarative_base()
+    async def connect(self):
+        self.client = AsyncIOMotorClient(os.environ['DATABASE_URL'])
+        self.db = self.client.my_database  # Replace 'testdb' with your database name
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+    async def close(self):
+        self.client.close()
+
+# Create an instance of MongoDB
+mongodb = MongoDB()
