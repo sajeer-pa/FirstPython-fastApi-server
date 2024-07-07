@@ -6,6 +6,11 @@ from models.author import Author, AuthorInDB
 
 router = APIRouter()
 
+
+@router.get("/")
+async def read_root():
+    return {"message": "Hello World"}
+
 @router.post("/author", response_model=AuthorInDB)
 async def create_author_route(author: Author):
     return await create_author(author)
